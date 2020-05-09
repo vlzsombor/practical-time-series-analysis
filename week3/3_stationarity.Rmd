@@ -1,8 +1,8 @@
 ---
-title: "R Notebook"
+title: "Stationarity recap"
 ---
 
-# Stochastic process recap
+## Introduction
 
 A stochastic process is a family of random variables structured with a time index, denoted by $X_t$ for discrete processes and $X(t)$ for continuous processes.
 
@@ -31,8 +31,8 @@ $$p(X(t_i)) = p(X(t_{i + \tau}))$$
 Then, 
 
 - Random variables are identically distributed, though not necessarily independent.
-- Mean function is constant (i.e. $\mu(t) = \mu).
-- Variance function is constant (i.e. \sigma^2(t) = \sigma^2$).
+- Mean function is constant (i.e. $\mu(t) = \mu$).
+- Variance function is constant (i.e. $\sigma^2(t) = \sigma^2$).
 
 If:
 
@@ -41,13 +41,12 @@ $$p(X(t_i), X(t_{i+1})) = p(X(t_{i+\tau}), X(t_{i+1+\tau}))$$
 Then:
 
 - Joint distribution distribution of two random variables depend only on the lag spacing.
-- Autocovariance function is not constant.
 - Autocovariance function is independent of $t$.
 - Autocovariance function only depends on lag:
 
 $$acf: \gamma(t1, t_2) = \gamma(t_2 - t_1) = \gamma(\tau)$$
 
-# Weakly stationarity
+## Weakly stationarity
 
 We can relax stationarity by imposing only 3 restrictions:
 
