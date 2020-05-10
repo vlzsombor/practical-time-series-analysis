@@ -19,7 +19,7 @@ $$s^2 \equiv \frac{1}{n-1} \sum^N_i (x_i - \hat{x}_i)(x_i - \hat{x}_i)$$
 
 Covariance can be used to measure the linear relationship between two variables, as:
 
-$$COV[X, Y] \equiv E[ (X - \mu_X)(Y - \mu_Y) ]$$
+$$Cov[X, Y] \equiv E[ (X - \mu_X)(Y - \mu_Y) ]$$
 
 f we analyze the previous formula, we see the pairs of points $(x_i, y_i)$ positively contribute to the metric when they are both above or below their correponding average.
 
@@ -32,11 +32,11 @@ $$cov \equiv \frac{1}{n-1} \sum^N_i (x_i - \hat{x}_i)(y_i - \hat{y}_i)$$
 
 Covariance is expressed as the product of the units of the two variables. However, we want correlation to be standard units  (i.e. by scaling by the standard deviations). It can be defined as:
 
-$$ p(X,Y) = E \left[ \left(\frac{X - \mu_x}{\sigma_X}\right) \left(\frac{Y - \mu_Y}{\sigma_Y} \right)\right]$$
+$$ \rho(X,Y) = E \left[ \left(\frac{X - \mu_x}{\sigma_X}\right) \left(\frac{Y - \mu_Y}{\sigma_Y} \right)\right]$$
 
 To compute the correlation estimate $r$ of data, we compute:
 
-$$ r \equiv \hat{p} \equiv \frac{1}{n-1} \sum \left( \frac{x_i - \hat{x}_i}{s_X} \right) \left( \frac{y_i - \hat{y}_i}{s_Y} \right) $$
+$$ r \equiv \hat{\rho} \equiv \frac{1}{n-1} \sum \left( \frac{x_i - \hat{x}_i}{s_X} \right) \left( \frac{y_i - \hat{y}_i}{s_Y} \right) $$
 
 ### Correlation example
 
