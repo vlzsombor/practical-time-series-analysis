@@ -147,10 +147,17 @@ The objective of this section is to present the **Yule-Walker equations, which a
 Given the following $AR(2)$ process:
 
 $$
-X_t = \frac{1}{3} X_{t-1} + \frac{1}{2} X_{t-2} + Z_t
+X_t = \phi_1 X_{t-1} + \phi_2 X_{t-2} + Z_t
 $$
 
+
 #### 1- Assume/prove stationarity
+
+Let's use an example for this step:
+
+$$
+X_t = \frac{1}{3} X_{t-1} + \frac{1}{2} X_{t-2} + Z_t
+$$
 
 We can obtain $\phi(B)$ as:
 
@@ -173,13 +180,13 @@ Which both lie outside unit circle in $\mathbb{R}^2$. Therefore, process is stat
 Given $E(X_t) = \mu$, then:
 
 $$
-E[X_t] = \frac{1}{3} E[X_{t-1}] + \frac{1}{2} E[X_{t-2}] + E[Z_t]
+E[X_t] = \phi_1 E[X_{t-1}] + \phi_2 E[X_{t-2}] + E[Z_t]
 $$
 
 As $E[Z_t] = 0$, we can extract that $\mu=0$:
 
 $$
-\mu = \frac{1}{3} \mu + \frac{1}{2} \mu \implies \mu=0
+\mu = \phi_1 \mu + \phi_2 \mu \implies \mu=0
 $$
 
 #### 3- Multiply both sides with k lagged version
@@ -187,12 +194,12 @@ $$
 Let's multiply both sides of the expectations equation with $X_{t-k}$:
 
 $$
-E[X_t E_{t-k}] = \frac{1}{3} E[X_{t-1}X_{t-k}] + \frac{1}{2} E[X_{t-2} X_{t-k}] + E[Z_t X_{t-k}]
+E[X_t E_{t-k}] = \phi_1 E[X_{t-1}X_{t-k}] + \phi_2 E[X_{t-2} X_{t-k}] + E[Z_t X_{t-k}]
 $$
 
 #### 4- Express in terms of covariance function
 
-Assuming there is no covariance contribution between $Z_t$ and $X_t$ (i.e. $E[X_{t-k} Z_t] = 0$) ad knowing that:
+Assuming there is no covariance contribution between $Z_t$ and $X_t$ (i.e. $E[X_{t-k} Z_t] = 0$) and knowing that:
 
 $$
 \gamma(-k) = E[X_t X_{t-k}]
@@ -200,12 +207,12 @@ $$
 We can rewrite the equation from previous step as:
 
 $$
-\gamma(-k) = \frac{1}{3} \gamma(-k+1) + \frac{1}{2} \gamma(-k+2) \\
+\gamma(-k) = \phi_1 \gamma(-k+1) + \phi_2 \gamma(-k+2) \\
 $$
 Since for all $k$, $\gamma(k) = \gamma(-k)$, then:
 
 $$
-\gamma(k) = \frac{1}{3} \gamma(k-1) + \frac{1}{2} \gamma(k-2) \\
+\gamma(k) = \phi_1 \gamma(k-1) + \phi_2 \gamma(k-2) \\
 $$
 
 #### 5-Yule-Walker equation
@@ -213,22 +220,28 @@ $$
 If we divide the previous equation by $\gamma(0) = \sigma_x^2$, we get an equation in terms of correlation $\rho$, which is the set of equations called **Yule-Walker equations**:
 
 $$
-\rho(k) = \frac{1}{3} \rho(k-1) + \frac{1}{2} \rho(k-2)
+\rho(k) = \phi_1 \rho(k-1) + \phi_2 \rho(k-2)
 $$
 
 Examples of equations in the set:
 
 $$
 ... \\
-p(5) = \frac{1}{3} p(4) + \frac{1}{2} p(3) \\
-p(6) = \frac{1}{3} p(5) + \frac{1}{2} p(4) \\
+p(5) = \phi_1 p(4) + \phi_2 p(3) \\
+p(6) = \phi_1 p(5) + \phi_2 p(4) \\
 ... \\
-p(k) = \frac{1}{3} p(k-1) + \frac{1}{2} p(k-2) \\
+p(k) = \phi_1 p(k-1) + \phi_2 p(k-2) \\
 $$
 
 #### 6- Solve Yule-Walker equation
 
-As done previously on this document, we must solve a difference equation. We use replacement $\rho(k) = a_n$, then:
+As done previously on this document, we must solve a difference equation. Let's use again the example:
+
+$$
+X_t = \frac{1}{3} X_{t-1} + \frac{1}{2} X_{t-2} + Z_t
+$$
+
+We use replacement $\rho(k) = a_n$, then:
 
 $$
 \lambda^n = \frac{1}{3} \lambda^{n-1} + \frac{1}{2} \lambda^{n-2} \implies \lambda^2 - \frac{1}{3} \lambda - \frac{1}{2} = 0
