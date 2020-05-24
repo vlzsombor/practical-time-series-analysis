@@ -134,7 +134,7 @@ $$
 
 This remainds quite a lot to we have already seen for geometric series. Autoregressive processes of order $q$ (i.e. AR(1)) can be thought as infinite-order moving average processes:
 
-$$X_t = (1 + \theta_1 B + \theta_2 B + ...) Z_t$$
+$$X_t = (1 + \phi_1 B + \phi_2 B + ...) Z_t$$
 
 ### Example with AR(1)
 
@@ -159,15 +159,15 @@ $$
 X_t = \frac{1}{(1 - \phi B)} Z_t = \\ 
 (1 + \phi B + \phi^2 B^2 + ...) Z_t = \\
 \sum^{\infty}_{k=0} (\phi B)^k Z_t = \\
-(1 + \theta_1 B + \theta_2 B^2 + ...) Z_t
+(1 + \phi_1 B + \phi_2 B^2 + ...) Z_t
 $$
 
 We can then easily compute the **expected value of $X_t$**:
 
 $$
-E[X_t] = E[(1 + \theta_1 B + \theta_2 B^2 + ...) Z_t] = \\
-E[Z_t + \theta_1 Z_{t-1} + \theta_2 Z_{t-2} + ...] = \\
-E[Z_t] + \theta_1 E[Z_{t-1}] + \theta_2 E[Z_{t-2}] + ... = 0
+E[X_t] = E[(1 + \phi_1 B + \phi_2 B^2 + ...) Z_t] = \\
+E[Z_t + \phi_1 Z_{t-1} + \phi_2 Z_{t-2} + ...] = \\
+E[Z_t] + \phi_1 E[Z_{t-1}] + \phi_2 E[Z_{t-2}] + ... = 0
 $$
 
 As the expected value can be read as a sum of expected values of random variables with zero mean, the expected value of the sum is also zero.
@@ -176,10 +176,10 @@ We can do the same for the **expected value of the variance** (using property $V
 
 $$
 V[X_t] = \\
-V[(1 + \theta_1 B + \theta_2 B^2 + ...) Z_t] = \\
-V[Z_t] + \theta_1² V[Z_{t-1}] + \theta_2² V[Z_{t-2}] + ... = \\
-\sigma_z^2 + \theta_1² \sigma_z^2 + \theta_2^2 \sigma_z^2 + ... \\
-\sigma_z^2 \sum^{\infty}_{k=0} \theta_i^2
+V[(1 + \phi_1 B + \phi_2 B^2 + ...) Z_t] = \\
+V[Z_t] + \phi_1² V[Z_{t-1}] + \phi_2² V[Z_{t-2}] + ... = \\
+\sigma_z^2 + \phi_1² \sigma_z^2 + \phi_2^2 \sigma_z^2 + ... \\
+\sigma_z^2 \sum^{\infty}_{k=0} \phi_i^2
 $$
 
 ### Properties of AR
@@ -189,16 +189,16 @@ $$
 While autocovariance for $MA(q)$ processes are defined as:
 
 $$
-\gamma(k) = \sigma^2_Z \sum^{q-k}_{i=0} \theta_i \theta_{i+k}
+\gamma(k) = \sigma^2_Z \sum^{q-k}_{i=0} \phi_i \phi_{i+k}
 $$
 
 For an $AR(p)$ process:
 
 $$
-\gamma(k) = \sigma^2_Z \sum^{\infty}_{i=0} \theta_i \theta_{i+k}
+\gamma(k) = \sigma^2_Z \sum^{\infty}_{i=0} \phi_i \phi_{i+k}
 $$
 
-Note the main difference is that contributions to covariance are limited to positions within $q$ in $MA$ while all positions contribute to covariance in $AR$. Note also that this converges if $\sum^{\infty}_{i=0} | \theta_i |$ absolutely converges.
+Note the main difference is that contributions to covariance are limited to positions within $q$ in $MA$ while all positions contribute to covariance in $AR$. Note also that this converges if $\sum^{\infty}_{i=0} | \phi_i |$ absolutely converges.
 
 
 #### Autocorrelation
@@ -206,5 +206,5 @@ Note the main difference is that contributions to covariance are limited to posi
 Then, autocorrelation can be easily computed as:
 
 $$
-p(k) = \frac{\gamma(k)}{\gamma(0)} = \frac{\sigma^2_Z \sum^{\infty}_{i=0} \theta_i \theta_{i+k}}{\sigma^2_Z \sum^{\infty}_{i=0} \theta_i \theta_{i}} = \frac{\sum^{\infty}_{i=0} \theta_i \theta_{i+k}}{\sum^{\infty}_{i=0} \theta_i \theta_{i}}
+\rho(k) = \frac{\gamma(k)}{\gamma(0)} = \frac{\sigma^2_Z \sum^{\infty}_{i=0} \phi_i \phi_{i+k}}{\sigma^2_Z \sum^{\infty}_{i=0} \phi_i \phi_{i}} = \frac{\sum^{\infty}_{i=0} \phi_i \phi_{i+k}}{\sum^{\infty}_{i=0} \phi_i \phi_{i}}
 $$
