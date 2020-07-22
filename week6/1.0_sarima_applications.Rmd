@@ -5,6 +5,9 @@ output:
     number_sections: true
 ---
 
+```{r}
+library(astsa)
+```
 
 ## Objective
 
@@ -13,6 +16,7 @@ The objective of this notebook is to forecast future values of a given time seri
 ## Model restrictions
 
 Following the *parsimony principle*, we will be restricting our pool of model candidates so they follow the following restriciton:
+
 
 $$
 p + d + q + P + D + Q \le 6
