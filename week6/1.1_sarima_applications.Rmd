@@ -111,7 +111,7 @@ Box.test(
 )
 ```
 
-We see p-value is very small, therefore, we cannot reject the null hypothesis that all autocorrelation coefficients are 0. We assume there is a correlation.
+We see p-value is very small, therefore, we can reject the null hypothesis that all autocorrelation coefficients are 0. We assume there is a correlation.
 
 
 ### Suggest order through ACF and PACF

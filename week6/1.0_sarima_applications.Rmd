@@ -77,7 +77,7 @@ plot(data.diff_log,
 Box.test(data.diff_log, lag = log(length(data.diff_log)), type = "Ljung-Box")
 ```
 
-We see p-value is very small, therefore, we cannot reject the null hypothesis that all autocorrelation coefficients are 0
+We see p-value is very small, therefore, we can reject the null hypothesis that all autocorrelation coefficients are 0.
 
 
 ### Suggest order through ACF and PACF
